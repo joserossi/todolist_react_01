@@ -1,0 +1,28 @@
+body {
+    font-family: monospace;
+}
+
+.task-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: 1px solid rgb(59, 59, 59);
+    margin: 10px 0 10px 0;
+}
+    .task-card-texto {
+        margin-left: 20px;
+    }
+
+    .task-card-texto-done {
+        text-decoration: line-through;
+    }
+
+    .task-card-botones {
+        margin-right: 20px;
+    }
+
+        .task-card-boton{
+            margin: 0 5px 0 5px;
+        }
