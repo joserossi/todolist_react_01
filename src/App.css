@@ -2,6 +2,21 @@ body {
     font-family: monospace;
 }
 
+.App {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.add-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .input-field {
+        width: 80%;
+    }
+
 .task-card {
     display: flex;
     align-items: center;
