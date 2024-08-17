@@ -3,12 +3,11 @@ import './App.css'
 import { useState, useEffect } from 'react'
 import { TaskCard } from './TaskCard'
 
-const tasks_list = [
-]
+let tasks_list = []
 
 function App() {
   const [message, setMessage] = useState('')
-  // const [updated, setUpdated] = useState(message)
+  const [updated, setUpdated] = useState(message)
   const [jsonData, setJsonData] = useState([]);
 
   useEffect(() => {
@@ -16,7 +15,7 @@ function App() {
     if (savedData) {
       setJsonData(JSON.parse(savedData));
     }
-  }, []);
+  }, [updated]);
 
   const handleChange = (event) => {
     setMessage(event.target.value)
@@ -29,10 +28,10 @@ function App() {
   const saveToLocalStorage = () => {
     localStorage.setItem('tasks', JSON.stringify(tasks_list))
   }
-
+  
+  
   const handleClick = () => {
-    // setUpdated(message);
-    // console.log(message)
+    setUpdated(message);
     tasks_list.push({
       task: message,
       isDone: false,
@@ -41,17 +40,6 @@ function App() {
 
     saveToLocalStorage()
   };
-  
-  // const handleClick = () => {
-  //   // 👇 "message" stores input field value
-  //   setUpdated(message);
-  //   console.log(message)
-  //   tasks_list.push({
-  //     task: message,
-  //     isDone: false,
-  //     isActive: true}
-  //   )
-  // };
   
   return (
     <div className="container">
